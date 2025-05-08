@@ -26,7 +26,7 @@ public class Card {
     }
 
     public int getPointValue(){
-        //aces high 14 or low 1?
+        //TODO aces high 14 or low 1?
         return 0;
     }
 
