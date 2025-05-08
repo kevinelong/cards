@@ -67,7 +67,13 @@ public class Card {
     }
 
     public String toString(){
-        return getValue() + getSuit();
+//        String[] suits = {"Hearts", "Spades", "Diamonds", "Clubs"};
+        String prefix =   switch (getSuit()){
+            case "Hearts", "Diamonds" -> ColorCodes.RED;
+            case "Spades", "Clubs" -> ColorCodes.BLACK;
+            default -> ColorCodes.RESET;
+        };
+        return ColorCodes.WHITE_BACKGROUND + prefix + getValue() + " of " + getSuit() + ColorCodes.RESET;
     }
 
 }

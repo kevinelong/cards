@@ -8,6 +8,7 @@ class Participant{
     }
     public void pickUp(Hand hand){
         this.hand = hand;
+        this.hand.show();
     }
 }
 public class MainApp {
@@ -27,7 +28,7 @@ public class MainApp {
         }
 
         for(Participant p : people){
-            System.out.println(p.name + " - " + p.hand.getValue());
+            System.out.println(p.name + " - " + p.hand.toString());
         }
 
         Participant best = people.getFirst();
