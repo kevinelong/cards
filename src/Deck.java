@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class Deck { //acting like a Game class
     private ArrayList<Card> cards;
-
+    int INITIAL_CARDS_PER_HAND = 2;
     Deck() {
         this.cards = new ArrayList<>();
         String[] suits = {"Hearts", "Spades", "Diamonds", "Clubs"};
@@ -41,6 +41,13 @@ public class Deck { //acting like a Game class
         } else {
             return null;
         }
+    }
+    public Hand dealHand(){
+        Hand hand = new Hand();
+        for (int i = 0; i < INITIAL_CARDS_PER_HAND; i++) {
+            hand.pickUp(dealCard());
+        }
+        return hand;
     }
 
     public int getSize() {
