@@ -26,8 +26,25 @@ public class Card {
     }
 
     public int getPointValue(){
-        //TODO aces high 14 or low 1?
-        return 0;
+
+        // determine point value and return it
+
+        // A = 11
+        if(this.value.equals("A")){
+            return 11;
+        }
+
+        // K, Q, J = 10
+        if(
+            this.value.equals("K") ||
+            this.value.equals("Q") ||
+            this.value.equals("J")
+        ){
+            return 10;
+        }
+
+        // all numeric cards are equal to their face value
+        return Integer.parseInt(this.value);
     }
 
     //methods
